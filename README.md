@@ -92,9 +92,7 @@ flutter run
 
 | Initial View | Search View | Clear Theme | Partly Cloud Theme | Overcast Theme | Freezing Fog Theme | Error Search Screen |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| <img width="1280" height="2856" alt="Search to get info" src="https://github.com/user-attachments/assets/8130214e-8360-414d-977d-c0d97ba0c230" />
- | <img width="1280" height="2856" alt="Search View" src="https://github.com/user-attachments/assets/b481b3ca-5678-408a-adce-40e4263fe498" />
-| <img width="200" alt="Clear theme" src="https://github.com/user-attachments/assets/30ee6165-a142-495a-911c-3d1ef35e8e22" /> | <img width="200" alt="Partly CLoudy theme" src="https://github.com/user-attachments/assets/1442879d-9818-4929-8287-1527a6b40ff5" /> | <img width="200" alt="Overcast theme" src="https://github.com/user-attachments/assets/7f95cec8-9f08-44c0-9b5c-3c8bc2e00b22" /> | <img width="200" alt="Freezing fog theme" src="https://github.com/user-attachments/assets/bf3253d9-1daa-4fc2-b32e-23f6c6d36e7d" /> | <img width="1280" height="2856" alt="Error Search View" src="https://github.com/user-attachments/assets/029a5e14-e924-487b-824f-68f976aa456b" />
+| <img width="1280" height="2856" alt="Search to get info" src="https://github.com/user-attachments/assets/8130214e-8360-414d-977d-c0d97ba0c230" /> | <img width="1280" height="2856" alt="Search View" src="https://github.com/user-attachments/assets/b481b3ca-5678-408a-adce-40e4263fe498" /> | <img width="200" alt="Clear theme" src="https://github.com/user-attachments/assets/30ee6165-a142-495a-911c-3d1ef35e8e22" /> | <img width="200" alt="Partly CLoudy theme" src="https://github.com/user-attachments/assets/1442879d-9818-4929-8287-1527a6b40ff5" /> | <img width="200" alt="Overcast theme" src="https://github.com/user-attachments/assets/7f95cec8-9f08-44c0-9b5c-3c8bc2e00b22" /> | <img width="200" alt="Freezing fog theme" src="https://github.com/user-attachments/assets/bf3253d9-1daa-4fc2-b32e-23f6c6d36e7d" /> | <img width="1280" height="2856" alt="Error Search View" src="https://github.com/user-attachments/assets/029a5e14-e924-487b-824f-68f976aa456b" />
 
   
 ---
