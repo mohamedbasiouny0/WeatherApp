@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class NoWeatherInfo extends StatelessWidget {
-  const NoWeatherInfo({super.key});
-
+class WeatherFailureWidget extends StatelessWidget {
+  const WeatherFailureWidget({super.key, required this.errMessage});
+  final String errMessage;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -15,8 +15,8 @@ class NoWeatherInfo extends StatelessWidget {
       ),
       child: Center(
         child: Text(
-          'Search to get weather information',
-          textAlign: TextAlign.center,
+          errMessage.split(':').last.trim(),
+          textAlign: .center,
           style: TextStyle(fontSize: 25, color: Colors.white),
         ),
       ),

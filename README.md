@@ -1,16 +1,117 @@
-# test7
+Here is the full, raw Markdown content for your `README.md`. I’ve tailored this specifically to your implementation, highlighting your use of **Cubit** for state management, **Dio** for networking, and the **dynamic theming** logic you wrote.
 
-A new Flutter project.
+# 🌦️ WeatherApp - Flutter Cubit Implementation
 
-## Getting Started
+A professional, real-time weather application built with **Flutter**. This project focuses on clean architecture, efficient state management using **Cubit**, and a reactive UI that adapts to environmental conditions.
 
-This project is a starting point for a Flutter application.
+---
 
-A few resources to get you started if this is your first Flutter project:
+## 🚀 Key Technical Features
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+* **State Management (Cubit):** Utilizes `flutter_bloc` (Cubit) to handle UI states (Initial, Loading, Success, and Failure) without the boilerplate of full Blocs.
+* **Networking with Dio:** Implements the **Dio** package for robust HTTP requests, featuring better error handling and cleaner syntax than the standard `http` package.
+* **Dynamic Theming:** The app's primary color and theme automatically transition based on the current weather condition (e.g., Orange for Sunny, Blue for Cloudy, etc.), providing an immersive user experience.
+* **Service-Oriented Architecture:** Logic is separated into a dedicated `WeatherService` for API calls, ensuring the UI remains decoupled from data fetching logic.
+* **JSON Serialization:** Data is parsed into a structured `WeatherModel` for type-safe data handling across the app.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+---
+
+## 🛠️ Tech Stack
+
+* **Framework:** [Flutter](https://flutter.dev)
+* **Language:** [Dart](https://dart.dev)
+* **State Management:** [Flutter Bloc/Cubit](https://pub.dev/packages/flutter_bloc)
+* **HTTP Client:** [Dio](https://pub.dev/packages/dio)
+* **Design Pattern:** Model-View-ViewModel (MVVM) / Service-Oriented.
+
+---
+
+## 📂 Project Structure
+
+```text
+lib/
+├── cubits/          # Logic handling: GetWeatherCubit & WeatherStates
+├── models/          # Data structure: WeatherModel
+├── services/        # Network layer: WeatherService (Dio implementation)
+├── views/           # UI Screens: HomeView and SearchView
+├── widgets/         # Modular UI: WeatherInfoBody and NoWeatherBody
+└── main.dart        # Global BlocProvider and Dynamic Theme logic
+
+```
+
+---
+
+## ✨ Features
+
+* **City Search:** Search for real-time weather data for any city globally.
+* **Real-time Updates:** Displays temperature, Max/Min temp, and condition descriptions.
+* **Context-Aware UI:** Beautiful weather icons and color schemes that change based on the weather status.
+* **Reliable Error Handling:** Graceful handling of network errors or invalid city names.
+
+---
+
+## ⚙️ Getting Started
+
+### Prerequisites
+
+* Flutter SDK installed.
+* An API Key from [OpenWeatherMap](https://openweathermap.org/api).
+
+### Installation
+
+1. **Clone the Repository:**
+```bash
+git clone [https://github.com/mohamedbasiouny0/WeatherApp.git](https://github.com/mohamedbasiouny0/WeatherApp.git)
+cd WeatherApp
+
+```
+
+
+2. **Install Dependencies:**
+```bash
+flutter pub get
+
+```
+
+
+3. **Configure your API Key:**
+Open `lib/services/weather_service.dart` and insert your API key:
+```dart
+final String apiKey = 'YOUR_API_KEY_HERE';
+
+```
+
+
+4. **Run the App:**
+```bash
+flutter run
+
+```
+
+## 📱 Previews
+
+| Initial View | Search View | Clear Theme | Partly Cloud Theme | Overcast Theme | Freezing Fog Theme | Error Search Screen |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| <img width="200" alt="Search to get info" src="https://github.com/user-attachments/assets/06da870c-fa18-4c8d-b2f6-4c8cac826a73" /> | <img width="200" alt="Search View" src="https://github.com/user-attachments/assets/39e55e53-94a1-482e-8980-3f098756ea6c" /> | <img width="200" alt="Clear theme" src="https://github.com/user-attachments/assets/30ee6165-a142-495a-911c-3d1ef35e8e22" /> | <img width="200" alt="Partly CLoudy theme" src="https://github.com/user-attachments/assets/1442879d-9818-4929-8287-1527a6b40ff5" /> | <img width="200" alt="Overcast theme" src="https://github.com/user-attachments/assets/7f95cec8-9f08-44c0-9b5c-3c8bc2e00b22" /> | <img width="200" alt="Freezing fog theme" src="https://github.com/user-attachments/assets/bf3253d9-1daa-4fc2-b32e-23f6c6d36e7d" /> | <img width="200" alt="Error Search View" src="https://github.com/user-attachments/assets/9eb36d72-ff3b-4d2a-919a-3ac9920bee17" />
+  
+---
+
+## 🤝 Contributing
+
+Contributions make the open-source community better.
+
+1. Fork the Project.
+2. Create your Feature Branch (`git checkout -b feature/NewFeature`).
+3. Commit your Changes (`git commit -m 'Add some NewFeature'`).
+4. Push to the Branch (`git push origin feature/NewFeature`).
+5. Open a Pull Request.
+
+---
+
+## 📧 Contact
+
+**Mohamed Basiouny** - [GitHub Profile](https://www.google.com/search?q=https://github.com/mohamedbasiouny0)
+
+Project Link: [https://github.com/mohamedbasiouny0/WeatherApp](https://github.com/mohamedbasiouny0/WeatherApp)
+
+---
