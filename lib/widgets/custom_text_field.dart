@@ -1,18 +1,15 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:test7/cubits/get_current_weather_cubit/get_current_weather_cubit.dart';
 
 class CustomTextField extends StatelessWidget {
-  const CustomTextField({
-    super.key,
-  });
+  const CustomTextField({super.key});
 
   @override
   Widget build(BuildContext context) {
     return TextField(
       cursorColor:
-          BlocProvider.of<GetCurrentWeatherCubit>(
+          BlocProvider.of<WeatherCubit>(
                 context,
               ).weatherModel?.weatherCondition ==
               null
@@ -20,7 +17,7 @@ class CustomTextField extends StatelessWidget {
           : Colors.black,
       style: TextStyle(
         color:
-            BlocProvider.of<GetCurrentWeatherCubit>(
+            BlocProvider.of<WeatherCubit>(
                   context,
                 ).weatherModel?.weatherCondition ==
                 null
@@ -28,23 +25,21 @@ class CustomTextField extends StatelessWidget {
             : Colors.black,
       ),
       onSubmitted: (cityName) {
-        GetCurrentWeatherCubit getCurrentWeatherCubit =
-            BlocProvider.of<GetCurrentWeatherCubit>(context);
+        WeatherCubit getCurrentWeatherCubit = BlocProvider.of<WeatherCubit>(
+          context,
+        );
         getCurrentWeatherCubit.getCurrentWeather(cityName: cityName);
         Navigator.pop(context);
       },
       decoration: InputDecoration(
-        contentPadding: EdgeInsets.symmetric(
-          vertical: 24,
-          horizontal: 24,
-        ),
-    
+        contentPadding: EdgeInsets.symmetric(vertical: 24, horizontal: 24),
+
         prefixIcon: Padding(
           padding: const EdgeInsets.only(left: 10),
           child: Icon(
             Icons.search,
             color:
-                BlocProvider.of<GetCurrentWeatherCubit>(
+                BlocProvider.of<WeatherCubit>(
                       context,
                     ).weatherModel?.weatherCondition ==
                     null
@@ -55,7 +50,7 @@ class CustomTextField extends StatelessWidget {
         labelText: 'Search',
         labelStyle: TextStyle(
           color:
-              BlocProvider.of<GetCurrentWeatherCubit>(
+              BlocProvider.of<WeatherCubit>(
                     context,
                   ).weatherModel?.weatherCondition ==
                   null
@@ -65,7 +60,7 @@ class CustomTextField extends StatelessWidget {
         hintText: 'Enter the city name',
         hintStyle: TextStyle(
           color:
-              BlocProvider.of<GetCurrentWeatherCubit>(
+              BlocProvider.of<WeatherCubit>(
                     context,
                   ).weatherModel?.weatherCondition ==
                   null
@@ -76,7 +71,7 @@ class CustomTextField extends StatelessWidget {
           borderRadius: BorderRadius.circular(16),
           borderSide: BorderSide(
             color:
-                BlocProvider.of<GetCurrentWeatherCubit>(
+                BlocProvider.of<WeatherCubit>(
                       context,
                     ).weatherModel?.weatherCondition ==
                     null
@@ -88,7 +83,7 @@ class CustomTextField extends StatelessWidget {
           borderRadius: BorderRadius.circular(16),
           borderSide: BorderSide(
             color:
-                BlocProvider.of<GetCurrentWeatherCubit>(
+                BlocProvider.of<WeatherCubit>(
                       context,
                     ).weatherModel?.weatherCondition ==
                     null

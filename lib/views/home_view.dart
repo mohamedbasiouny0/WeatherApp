@@ -14,61 +14,64 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor:
-            BlocProvider.of<GetCurrentWeatherCubit>(
-                  context,
-                ).weatherModel?.weatherCondition ==
-                null
-            ? Colors.blue[900]
-            : getWeatherColor(
-                BlocProvider.of<GetCurrentWeatherCubit>(
-                  context,
-                ).weatherModel?.weatherCondition,
-              ),
-
-        elevation: 0,
-        // surfaceTintColor: Colors.transparent,
-        title: Text(
-          'Weather App',
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 8),
-            child: IconButton(
-              onPressed: () {
-                Navigator.of(
-                  context,
-                ).push(MaterialPageRoute(builder: (context) => SearchView()));
-              },
-              icon: Icon(Icons.search),
+    return BlocBuilder<WeatherCubit, WeatherStates>(
+      builder: (context, state) {
+        return Scaffold(
+          appBar: AppBar(
+            backgroundColor:
+                BlocProvider.of<WeatherCubit>(
+                      context,
+                    ).weatherModel?.weatherCondition ==
+                    null
+                ? Colors.blue[900]
+                : getWeatherColor(
+                    BlocProvider.of<WeatherCubit>(
+                      context,
+                    ).weatherModel?.weatherCondition,
+                  ),
+            elevation: 0,
+            // surfaceTintColor: Colors.transparent,
+            title: Text(
+              'Weather App',
+              style: TextStyle(fontWeight: FontWeight.bold),
             ),
-          ),
-        ],
+            actions: [
+              Padding(
+                padding: const EdgeInsets.only(right: 8),
+                child: IconButton(
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => SearchView()),
+                    );
+                  },
+                  icon: Icon(Icons.search),
+                ),
+              ),
+            ],
 
-        foregroundColor:
-            BlocProvider.of<GetCurrentWeatherCubit>(
-                  context,
-                ).weatherModel?.weatherCondition ==
-                null
-            ? Colors.white
-            : Colors.black,
-      ),
-      body: BlocBuilder<GetCurrentWeatherCubit, WeatherStates>(
-        builder: (context, state) {
-          if (state is WeatherInitialState) {
-            return NoWeatherInfo();
-          } else if (state is WeatherLoadedState) {
-            return WeatherInfo();
-          } else if (state is WeatherFailureState) {
-            return WeatherFailureWidget(errMessage: state.errMessage);
-          } else {
-            return SizedBox();
-          }
-        },
-      ),
+            foregroundColor:
+                BlocProvider.of<WeatherCubit>(
+                      context,
+                    ).weatherModel?.weatherCondition ==
+                    null
+                ? Colors.white
+                : Colors.black,
+          ),
+          body: BlocBuilder<WeatherCubit, WeatherStates>(
+            builder: (context, state) {
+              if (state is WeatherInitialState) {
+                return NoWeatherInfo();
+              } else if (state is WeatherLoadedState) {
+                return WeatherInfo();
+              } else if (state is WeatherFailureState) {
+                return WeatherFailureWidget(errMessage: state.errMessage);
+              } else {
+                return SizedBox();
+              }
+            },
+          ),
+        );
+      },
     );
   }
 }

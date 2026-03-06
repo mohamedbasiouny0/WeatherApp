@@ -4,9 +4,8 @@ import 'package:test7/cubits/get_current_weather_cubit/get_current_weather_state
 import 'package:test7/models/weather_model.dart';
 import 'package:test7/services/weatehr_service.dart';
 
-
-class GetCurrentWeatherCubit extends Cubit<WeatherStates> {
-  GetCurrentWeatherCubit() : super(WeatherInitialState());
+class WeatherCubit extends Cubit<WeatherStates> {
+  WeatherCubit() : super(WeatherInitialState());
   WeatherModel? weatherModel;
   Future<void> getCurrentWeather({required String cityName}) async {
     try {
@@ -16,7 +15,7 @@ class GetCurrentWeatherCubit extends Cubit<WeatherStates> {
 
       emit(WeatherLoadedState());
     } on Exception catch (e) {
-      weatherModel?.weatherCondition = null ;
+      weatherModel?.weatherCondition = null;
       emit(WeatherFailureState(errMessage: e.toString()));
     }
   }

@@ -14,27 +14,24 @@ class WeatherApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => GetCurrentWeatherCubit(),
-      child: Builder(
-        builder: (context) =>
-            BlocBuilder<GetCurrentWeatherCubit, WeatherStates>(
-              builder: (context, state) {
-                return MaterialApp(
-                  home: HomeView(),
-                  debugShowCheckedModeBanner: false,
-                  theme: ThemeData(
-                    useMaterial3: true,
-                    colorScheme: ColorScheme.fromSeed(
-                      seedColor: getWeatherColor(
-                        BlocProvider.of<GetCurrentWeatherCubit>(
-                          context,
-                        ).weatherModel?.weatherCondition,
-                      ),
-                    ),
-                  ),
-                );
-              },
+      create: (context) => WeatherCubit(),
+      child: BlocBuilder<WeatherCubit, WeatherStates>(
+        builder: (context, state) {
+          return MaterialApp(
+            home: HomeView(),
+            debugShowCheckedModeBanner: false,
+            theme: ThemeData(
+              useMaterial3: true,
+              colorScheme: ColorScheme.fromSeed(
+                seedColor: getWeatherColor(
+                  BlocProvider.of<WeatherCubit>(
+                    context,
+                  ).weatherModel?.weatherCondition,
+                ),
+              ),
             ),
+          );
+        },
       ),
     );
   }
@@ -84,5 +81,3 @@ MaterialColor getWeatherColor(String? condition) {
     return Colors.teal; // fallback
   }
 }
-
-

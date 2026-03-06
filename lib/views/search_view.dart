@@ -4,7 +4,6 @@ import 'package:test7/cubits/get_current_weather_cubit/get_current_weather_cubit
 import 'package:test7/main.dart';
 import 'package:test7/widgets/custom_text_field.dart';
 
-
 class SearchView extends StatefulWidget {
   const SearchView({super.key});
 
@@ -18,13 +17,13 @@ class _SearchViewState extends State<SearchView> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor:
-            BlocProvider.of<GetCurrentWeatherCubit>(
+            BlocProvider.of<WeatherCubit>(
                   context,
                 ).weatherModel?.weatherCondition ==
                 null
             ? Colors.blue[900]
             : getWeatherColor(
-                BlocProvider.of<GetCurrentWeatherCubit>(
+                BlocProvider.of<WeatherCubit>(
                   context,
                 ).weatherModel?.weatherCondition,
               ),
@@ -37,7 +36,7 @@ class _SearchViewState extends State<SearchView> {
         ),
 
         foregroundColor:
-            BlocProvider.of<GetCurrentWeatherCubit>(
+            BlocProvider.of<WeatherCubit>(
                   context,
                 ).weatherModel?.weatherCondition ==
                 null
@@ -48,24 +47,24 @@ class _SearchViewState extends State<SearchView> {
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors:
-                BlocProvider.of<GetCurrentWeatherCubit>(
+                BlocProvider.of<WeatherCubit>(
                       context,
                     ).weatherModel?.weatherCondition ==
                     null
                 ? [Colors.blue[900]!, Colors.blue, Colors.blue[50]!]
                 : [
                     getWeatherColor(
-                      BlocProvider.of<GetCurrentWeatherCubit>(
+                      BlocProvider.of<WeatherCubit>(
                         context,
                       ).weatherModel?.weatherCondition,
                     ),
                     getWeatherColor(
-                      BlocProvider.of<GetCurrentWeatherCubit>(
+                      BlocProvider.of<WeatherCubit>(
                         context,
                       ).weatherModel?.weatherCondition,
                     )[300]!,
                     getWeatherColor(
-                      BlocProvider.of<GetCurrentWeatherCubit>(
+                      BlocProvider.of<WeatherCubit>(
                         context,
                       ).weatherModel?.weatherCondition,
                     )[50]!,
